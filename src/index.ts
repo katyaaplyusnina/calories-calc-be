@@ -33,7 +33,7 @@ app.get('/users/:id', async (req, res) => {
   } else {
     res.json(user);
   }
-})
+});
 
 app.get('/users/:id', async (req: Request, res: Response) => {
   const user = await AppDataSource.getRepository(User).findOneBy({ id: parseInt(req.params.id) });
