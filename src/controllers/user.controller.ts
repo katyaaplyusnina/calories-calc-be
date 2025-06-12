@@ -16,7 +16,7 @@ export const getUserById = async (req: Request, res: Response) => {
   if (user) {
     res.json(user);
   } else {
-    res.status(404).json({message: 'User not found'});
+    res.status(404).json({ message: 'User not found' });
   }
 };
 
@@ -31,7 +31,7 @@ export const updateUser = async (req: Request, res: Response) => {
   if (updated) {
     res.json(updated);
   } else {
-    res.status(404).json({message: 'User not found'});
+    res.status(404).json({ message: 'User not found' });
   }
 };
 
@@ -41,6 +41,6 @@ export const deleteUser = async (req: Request, res: Response) => {
   if (success) {
     res.status(204).end();
   } else {
-    res.status(404).json({message: 'User not found'});
+    res.status(404).json({ message: 'User not found' });
   }
 };
