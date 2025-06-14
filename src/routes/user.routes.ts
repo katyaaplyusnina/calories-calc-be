@@ -3,6 +3,7 @@ import * as controller from '../controllers/user.controller';
 
 const router = Router();
 
+// todo
 router.get('/', controller.getAllUsers);
 router.get('/:id', controller.getUserById);
 router.post('/', controller.createUser);

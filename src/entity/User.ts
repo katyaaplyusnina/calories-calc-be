@@ -1,13 +1,21 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne } from 'typeorm';
+import { UserSettings } from './UserSettings';
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
   id!: number;
 
-  @Column()
-  name!: string;
-
   @Column({ unique: true })
-  email!: string;
+  login!: string;
+
+  @Column()
+  passwordHash!: string;
+
+  @OneToOne(() => UserSettings, (settings) => settings.user, {
+    cascade: true,
+    eager: true,
+    nullable: true,
+  })
+  settings?: UserSettings;
 }
