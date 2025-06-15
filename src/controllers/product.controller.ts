@@ -17,7 +17,7 @@ export const updateProduct = async (req: Request, res: Response) => {
   if (updated) {
     res.json(updated);
   } else {
-    res.status(404).json({ message: 'User not found' });
+    res.status(404).json({ message: 'Product not found' });
   }
 };
 
@@ -27,6 +27,6 @@ export const deleteProduct = async (req: Request, res: Response) => {
   if (success) {
     res.status(204).end();
   } else {
-    res.status(404).json({ message: 'User not found' });
+    res.status(404).json({ message: 'Product not found' });
   }
 };
