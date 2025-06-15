@@ -3,12 +3,6 @@ import { UserSettings } from '../entity/UserSettings';
 
 const repo = AppDataSource.getRepository(UserSettings);
 
-export const createSettings = async (data: Partial<UserSettings>) => {
-  const settings = repo.create(data);
-
-  return repo.save(settings);
-};
-
 export const getSettingsById = async (id: number) => {
   return repo.findOneBy({ id });
 };
